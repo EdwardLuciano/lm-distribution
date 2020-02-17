@@ -1,0 +1,200 @@
+include ../layouts/main
+block content
+	.page_cabinet
+		.wrap-header
+			.container-fluid
+				.header
+						.logo
+							img(src="/img/logo-lm.png")
+						.toggler.d-lg-none
+							.toggler__btn
+						.menu.mobile_hide
+							ul
+								li
+									a(href="#") Треки
+								li.system-item
+									a(href="#") Артист 15
+								li.system-item
+									a(href="#") Выход
+
+		.workboard
+			.container
+				.workboard__header
+					.workboard-title Загрузка трека
+					.work-board-introduction Для загрузки трека, пожалуйста заполните все поля
+				form.form_adding-track
+					.composition
+						.workboard-title.mb-2 Трек и информация о нём
+						.row
+							.col-md-6
+								.form-field
+									label Композиция
+									.custom-file
+										input#validatedCustomFile.custom-file-input(type="file", required="", name="fileTrack", aria-describedby="HelpToFileTrack")
+										label.custom-file-label(for='validatedCustomFile' data-browse="Обзор") Загрузите композицию
+										.invalid-feedback Example invalid custom file feedback
+									small(id="HelpToFileTrack" class="text-muted") Прикрепите свою композицию в 
+										b .wav формате
+							.col-md-6
+								.form-field
+									label Обложка
+									.custom-file
+										input#validatedCustomFile.custom-file-input(type='file', required='', name="fileCoverImg" aria-describedby="fileCoverImg")
+										label.custom-file-label(for='validatedCustomFile' data-browse="Обзор") Загрузите обложку
+										.invalid-feedback Example invalid custom file feedback
+									small(id="fileCoverImg" class="text-muted") форматы: .png / .jpg, размер 1440x1440
+							.col-md-6
+								.form-field
+									label Автор слов (ФИО)
+									input(type="text", class="form-control", placeholder="Введите ФИО автора слов", name="authorMusic" aria-describedby="HelpAuthorMusic")
+									small(id="HelpAuthorMusic" class="text-muted") Автором слов является тот, кто написал текст для данной композиции
+							.col-md-6
+								.form-field
+									label Автор музыки (ФИО)
+									input(type="text", class="form-control", placeholder="Введите ФИО автора музыки", name="authorText" aria-describedby="HelpAuthorText")
+									small(id="HelpAuthorText" class="text-muted") Если автор музыки - не Вы, пришлите договор отчуждения прав, от автора
+							.col-md-6
+								.form-field
+									label Название альбома
+									input(type="text", class="form-control", placeholder="Введите название альбома", name="albumName" aria-describedby="HelpAlbumName")
+									small(id="HelpAlbumName" class="text-muted") Введите название альбома, если композиция входит в альбом
+									
+
+					.workboard-title.mb-2 Персональные данные
+					.row
+						.col-lg-6
+							.row
+								.col-12
+									.form-field
+										label ФИО
+										input(type="text", class="form-control", placeholder="Введите свои ФИО", name="fio")
+								.col-12
+									.form-field
+										label Дата рождения
+										input(type="text", class="form-control", placeholder="Введите дату своего рождения", name="birthday")
+								.col-12
+									.form-field
+										label Номер телефона
+										input(type="text", class="form-control", placeholder="Введите свой номер", name="phone")
+								.col-12
+									.form-field
+										label Псевдоним 
+										input(type="text", class="form-control", placeholder="Введите псевдоним", name="nickname")
+						.col-lg-6
+							.row
+								.col-12
+									.form-field
+										label Адрес регистрации 
+										input(type="text", class="form-control", placeholder="Введите адрес регистрации", name="addressRegistration")
+								.col-12
+									.form-field
+										label Адрес фактического проживания
+										input(type="text", class="form-control", placeholder="Если отличается от адреса регистрации", name="addressResidential")
+								.col-md-4
+									.form-field
+										label Гражданство 
+										input(type="text", class="form-control", placeholder="РФ", name="citizenship")
+								.col-md-4
+									.form-field
+										label Серия паспорта 
+										input(type="text", class="form-control", placeholder="6313", name="passport_series")
+								.col-md-4
+									.form-field
+										label Номер паспорта 
+										input(type="text", class="form-control", placeholder="934021", name="passport_number")
+								.col-md-7
+									.form-field
+										label Кем выдан паспорт 
+										input(type="text", class="form-control", placeholder="Кем выдан паспорт", name="whoIssue")
+								.col-md-5
+									.form-field
+										label Дата выдачи 
+										input(type="text", class="form-control", placeholder="03.10.2013", name="dataIssue")
+					.workboard-title Фото или сканы паспорта
+					.workboard-introduction.mb-3 Загрузите фото или сканы основной страницы паспорта и страницы с регистрацией
+					.row
+						.col-md-6
+							.form-field
+								label Основная страница
+								.custom-file
+									input#validatedCustomFile.custom-file-input(type="file", required="", name="MainPageScan", aria-describedby="HelpMainPageScan")
+									label.custom-file-label(for='validatedCustomFile' data-browse="Обзор") Загрузите композицию
+									.invalid-feedback Example invalid custom file feedback
+							//	small(id="HelpToFileTrack" class="text-muted") Прикрепите свою композицию в 
+									
+						.col-md-6
+							.form-field
+								label Обложка
+								.custom-file
+									input#validatedCustomFile.custom-file-input(type='file', required='', name="registrationPageScan" aria-describedby="HelpRegistrationPageScan")
+									label.custom-file-label(for='validatedCustomFile' data-browse="Обзор") Загрузите обложку
+									.invalid-feedback Example invalid custom file feedback
+								//small(id="fileCoverImg" class="text-muted") форматы: .png / .jpg, размер 1440x1440
+					.requisites
+						.workboard-title.mb-2 Реквизиты
+						.custom-control.custom-radio.custom-control-inline
+							input#customRadioInline1.custom-control-input(type='radio', name='RadioTypeRequisites', value='fizlico' checked='checked')
+							label.custom-control-label(for='customRadioInline1') Физ. лицо
+						.custom-control.custom-radio.custom-control-inline.mb-2
+							input#customRadioInline2.custom-control-input(type='radio', name='RadioTypeRequisites', value='ip')
+							label.custom-control-label(for='customRadioInline2') ИП
+						.row
+							.col-md-6
+								.form-field
+									label Номер карты
+									input(type="text", class="form-control", placeholder="Номер вашей карты", name="numberCard" aria-describedby="HelpNumberCard")
+							.col-md-6.d-none
+								.form-field
+									label Наименование ИП
+									input(type="text", class="form-control", placeholder="Номер вашей карты", name="nameIp" aria-describedby="HelpNumberCard")
+
+							.col-md-6
+								.form-field
+									label Номер лицевого счёта
+									input(type="text", class="form-control", placeholder="Номер лицевого счёта", name="paymentAccount" aria-describedby="HelpPaymentAccount")
+							.col-md-6
+								.form-field
+									label Наименование банка
+									input(type="text", class="form-control", placeholder='Например, ПАО "Сбербанк"', name="nameBank" aria-describedby="HelpNameBank")
+							.col-md-6
+								.form-field
+									label БИК
+									input(type="text", class="form-control", placeholder="БИК вашего банка", name="bik" aria-describedby="HelpBik")
+
+							.col-md-6
+								.form-field
+									label ИНН
+									input(type="text", class="form-control", placeholder="Введите ИНН", name="inn" aria-describedby="HelpInn")
+							.col-md-6
+								.form-field
+									label Кор. счёт
+									input(type="text", class="form-control", placeholder="Кор. счёт", name="korAccount" aria-describedby="HelpKorAccount")
+							.col-md-6
+								.form-field
+									label СНИЛС
+									input(type="text", class="form-control", placeholder="Введите номер СНИЛСа", name="snils" aria-describedby="HelpSnils")
+
+					button.btn(type="submit") Отправить трек
+		section.footer
+			.container-fluid
+				.logo
+					img(src="/img/logo-lm.png")
+					.logo__label LM Distribution
+				.footer__middle 
+					.social
+						.social-instagram
+							a(href="https://instagram.com/legacy_music_to", target="_blank")
+								img(src="/img/icons/instagram.svg")
+						.social-vk
+							a(href="https://vk.com/legacy.music", target="_blank")
+								img(src="/img/icons/vk.svg")
+					.agreement
+						a(href="#") Пользовательское соглашение
+				.footer__last
+					.menu
+						ul
+							li
+								a(href="mailto:legacy_music@bk.ru") legacy_music@bk.ru
+							li
+								a(href="#") Главная
+

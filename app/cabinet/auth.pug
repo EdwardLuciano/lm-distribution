@@ -1,0 +1,114 @@
+include ../layouts/main
+block content
+	.page_cabinet.auth
+		.wrap-header
+			.container-fluid
+				.header
+						.logo
+							img(src="/img/logo-lm.png")
+							.logo__label LM Distribution
+						.toggler.d-lg-none
+							.toggler__btn
+						.menu.mobile_hide
+							ul
+								li
+									a(href="#") Что это?
+		.workboard
+			.container
+				h1.page-title Вход / Регистрация
+				.page-intro Для доступа в личный кабинет артиста, пожалуйста войдите, #[br]или зарегистрируйтесь, если у вас ещё нет аккаунта
+				.row
+					.col-lg-3
+						form.form-auth
+							.form-title Вход
+							.form-field
+								label E-mail
+								input(type="text", class="form-control", placeholder="Введите E-mail", name="email")
+							.form-field
+								label Пароль
+								input(type="text", class="form-control", placeholder="Введите пароль", name="password")
+							button.btn(type="submit") Войти
+							a.forgotpassword(href="#") Забыли пароль?
+
+					.col-lg-6
+						form.form-registration
+							.form-title Регистрация
+							.row
+								.col-md-6
+									.form-field
+										label E-mail
+										input(type="text", class="form-control", placeholder="Введите свой E-mail", name="email")
+										
+								.col-md-6
+									.form-field
+										label Псевдоним 
+										input(type="text", class="form-control", placeholder="Введите псевдоним", name="nickname")
+								.col-md-6
+									.form-field
+										label Пароль
+										input(type="text", class="form-control", placeholder="Введите пароль", name="password")
+								.col-md-6
+									.form-field
+										label ФИО
+										input(type="text", class="form-control", placeholder="Введите свои ФИО", name="fio")
+								.col-md-6
+									.form-field
+										label Номер телефона
+										input(type="text", class="form-control", placeholder="Введите свой номер", name="phone")
+								.col-md-6
+									.form-field
+										label Город
+										input(type="text", class="form-control", placeholder="Введите свой город проживания", name="city")
+								.col-md-6
+									.form-field
+										label Дата рождения
+										input(type="text", class="form-control", placeholder="Введите дату своего рождения", name="birthday")
+								.col-md-6
+								.col-md-4
+									.form-field
+										label VK
+										span.icon-in-field
+											img(src="/img/icons/vk_color.svg")
+										input(type="text", class="form-control", placeholder="https://", name="vk")
+								.col-md-4
+									.form-field
+										label Instagram
+										span.icon-in-field
+											img(src="/img/icons/instagram_color.svg")
+										input(type="text", class="form-control", placeholder="https://", name="instagram")
+								.col-md-4
+									.form-field
+										label SoundCloud
+										span.icon-in-field
+											img(src="/img/icons/soundcloud_color.svg")
+										input(type="text", class="form-control", placeholder="https://", name="soundcloud")
+							button.btn(type="submit") Зарегистрироваться
+
+					.col-lg-3
+						.advantages-card
+							.advantages-card__title Личный кабинет позволяет
+							ul.advantages-card__list
+								li Загружать треки на все площадки в один клик
+								li Просматривать статистику треков
+		section.footer
+			.container-fluid
+				.logo
+					img(src="/img/logo-lm.png")
+					.logo__label LM Distribution
+				.footer__middle 
+					.social
+						.social-instagram
+							a(href="https://instagram.com/legacy_music_to", target="_blank")
+								img(src="/img/icons/instagram.svg")
+						.social-vk
+							a(href="https://vk.com/legacy.music", target="_blank")
+								img(src="/img/icons/vk.svg")
+					.agreement
+						a(href="#") Пользовательское соглашение
+				.footer__last
+					.menu
+						ul
+							li
+								a(href="mailto:legacy_music@bk.ru") legacy_music@bk.ru
+							li
+								a(href="#") Главная

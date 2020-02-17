@@ -1,0 +1,45 @@
+@font-face {
+    font-family: 'SongerRegular';
+    src: local('Songer Semi Expanded Regular'), local('Songer-Semi-Expanded-Regular'),
+        url('SONGERSemiExpanded.woff2') format('woff2'),
+        url('SONGERSemiExpanded.woff') format('woff'),
+        url('SONGERSemiExpanded.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+ @font-face {
+    font-family: 'SongerExtraBold';
+    src: local('Songer Semi Expanded Extra Bold'), local('Songer-Semi-Expanded-Extra-Bold'),
+        url('SONGERSemiExpanded-ExtraBold.woff2') format('woff2'),
+        url('SONGERSemiExpanded-ExtraBold.woff') format('woff'),
+        url('SONGERSemiExpanded-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'SongerHeavy';
+    src: local('Songer Semi Expanded Heavy'), local('Songer-Semi-Expanded-Heavy'),
+        url('SONGERSemiExpanded-Heavy.woff2') format('woff2'),
+        url('SONGERSemiExpanded-Heavy.woff') format('woff'),
+        url('SONGERSemiExpanded-Heavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+  }
+@font-face {
+	font-family: 'PhilosopherRegular';
+	src: url('Philosopher.eot');
+	src: url('Philosopher.eot?#iefix') format('embedded-opentype'),
+	url('Philosopher.woff') format('woff'),
+	url('Philosopher.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'PhilosopherBold';
+	src: url('Philosopher-Bold.eot');
+	src: url('Philosopher-Bold.eot?#iefix') format('embedded-opentype'),
+	url('Philosopher-Bold.woff') format('woff'),
+	url('Philosopher-Bold.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}

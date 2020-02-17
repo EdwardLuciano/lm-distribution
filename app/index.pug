@@ -1,0 +1,121 @@
+
+include layouts/main
+	block content
+		section.main-screen
+			video#bgvideo.bgvideo(autoplay='', loop='', muted='')
+				source(src='video/video-main-screen.mp4', type='video/mp4')
+
+			.container-fluid
+				.header
+						.logo
+							img(src="/img/logo-lm.png")
+							.logo__label LM Distribution
+						.toggler.d-lg-none
+							.toggler__btn
+						.menu.mobile_hide
+							ul
+								li
+									a(href="mailto:legacy_music@bk.ru") legacy_music@bk.ru
+								li
+									a(href="#") Вход / Регистрация
+			.main-screen-intro
+				.container-fluid
+					.main-screen-intro__title Наследие начинается сейчас
+					.main-screen-intro__invocation Сделай первый шаг на пути к успеху
+					.main-screen-intro__action
+						button.btn.btn_upload-your-track
+							img(src="/img/icons/cloud_upload-24px.svg")
+							| Загрузить свой трек
+					.main-screen-intro__social
+						.social
+							.social-instagram
+								a(href="https://instagram.com/legacy_music_to", target="_blank")
+									img(src="/img/icons/instagram.svg")
+							.social-vk
+								a(href="https://vk.com/legacy.music", target="_blank")
+									img(src="/img/icons/vk.svg")
+		section.advantages
+			.container-fluid.container-fluid_1366
+				.row
+					.col-lg-6
+						.tree
+						h2.section-title Что ты получишь?
+						ul.list-advantages
+							li Цифровая рассылка на сотни площадок по всему миру.
+							li Доступ к статистике в отчетный период.
+							li Выплаты по монетизации соответственно отчетному периоду. 
+							li Наша команда загрузит Ваш контент, избавив Вас от рутинной работы по выгрузке материала!
+							li Рассмотрение для размещения плей-листов и маркетинга нашим экспертом, штатной командой.*
+							li Доступ к эффективным маркетинговым инструментам и платформам.** 
+							li Промо-рассылка и другие мощные маркетинговые решения.
+					.col-lg-6.pr-lg-0
+						.cards-img
+							.cards-img__item
+								img(src="/img/concert_1.jpg")
+							.cards-img__item
+								img(src="/img/concert_2.jpg")
+		.making-decision
+			.container-fluid.container-fluid_1366
+				.making-decision__head
+					h3 Прими решение и действуй!
+					button.btn.btn_registration
+						img(src="/img/icons/how_to_reg-24px.svg")
+						| Регистрация
+				.making-decision__desc Зарегистрируйся на нашем сайте и загрузи свой первый трек! Мы прослушаем его и загрузим на все площадки
+		section.additional-services
+			.container-fluid.container-fluid_1366
+				.row
+					.col-lg-6.pl-lg-0
+						.cards-img
+							.cards-img__item
+								img(src="/img/concert_3.jpg")
+							.cards-img__item
+								img(src="/img/concert_4.jpg")
+					.col-lg-6
+						.tree
+						h2.section-title Дополнительные услуги
+						| СЛЕДУЮЩИЕ УСЛУГИ МОГУТ БЫТЬ ВЫПОЛНЕНЫ НАШЕЙ КОМАНДОЙ (Могут применяться дополнительные сборы.):
+						ul.list-advantages
+							li Оказание дополнительных услуг по СММ для эффективного продвижению Вашего творчества (Та́рге́тинг, продвижение через Instagram, TikTok и тд.)
+							li Помощь в разработке дизайнов обложек, в сведении ваших треков.***
+							li Дополнительные формы распространения.
+							li Управление персонализированной маркетинговой компанией (социальные сети и реклама).
+							li Услуги креативного дизайна для лучшего продвижения вашего бренда.
+							li Юридическое сопровождение и договорная основа сотрудничества.
+		.making-decision
+			.container-fluid.container-fluid_1366
+				.making-decision__head
+					h3 Прими решение и действуй!
+					button.btn.btn_registration
+						img(src="/img/icons/how_to_reg-24px.svg")
+						| Регистрация
+				.making-decision__desc Зарегистрируйся на нашем сайте и загрузи свой первый трек! Мы прослушаем его и загрузим на все площадки
+		.our-artists
+			h3.section-title Наши артисты
+			.row
+				-for(var i = 1;i<11;i++)
+					+cover(i)
+		section.footer
+			.container-fluid
+				.logo
+					img(src="/img/logo-lm.png")
+					.logo__label LM Distribution
+				.footer__middle 
+					.social
+						.social-instagram
+							a(href="https://instagram.com/legacy_music_to", target="_blank")
+								img(src="/img/icons/instagram.svg")
+						.social-vk
+							a(href="https://vk.com/legacy.music", target="_blank")
+								img(src="/img/icons/vk.svg")
+					.agreement
+						a(href="#") Пользовательское соглашение
+				.footer__last
+					.menu
+						ul
+							li
+								a(href="mailto:legacy_music@bk.ru") legacy_music@bk.ru
+							li
+								a(href="#") Вход / Регистрация
+
+

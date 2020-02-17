@@ -1,0 +1,495 @@
+
+.page_cabinet {
+	.wrap-header {
+		background-color: $darkgray;
+
+	}
+
+	.header {
+		padding-top: 15px;
+		padding-bottom: 15px;
+		margin-bottom: rem(29px);
+		.toggler {
+			&__btn {
+				background-color: black;
+				&:after {
+					background-color: black;
+				}
+				&:before {
+					background-color: black;
+				}
+			}
+		}
+		.menu { 
+			ul {
+				li {
+					&:last-child {
+						&:after {
+							top: 0;
+						}
+					}
+				}
+			} 
+
+		}
+	}
+	&:not(.auth) {
+		.wrap-header {
+			background-color: $gray;
+		}
+		.header {
+			align-items: center;
+			.logo {
+				&>img {
+					width: 50px;
+					margin-right: 1rem;
+				}
+			}
+			.menu {
+				width: 100%;	
+				ul {
+					li {
+						margin-right: 1rem;
+						&:last-child {
+							margin-right: 0;
+						}
+						a {
+							color: $darkgray;
+						}
+						&:not(.system-item) {
+							&+.system-item {
+								@media (min-width: 992px) {
+									flex-grow: 1;
+								    text-align: right;
+								}
+							
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.btn {
+		background-color: $gold;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		border-radius: 7px;
+		font-family: font('Songer', 'Regular');
+		padding-left: rem(29px);
+		padding-right: rem(29px);
+		&:hover {
+			background-color: transparentize($gold, 0.25);
+		}
+		&:focus, &:active {
+			background-color: darken($gold, 4%);
+			box-shadow: none;
+		}
+		&_black {
+			background-color: $darkgray;
+			color: white;
+			&:hover {
+				background-color: transparentize($darkgray, 0.25);
+				color: white;
+			}
+			&:focus, &:active {
+				background-color: darken($darkgray, 4%);
+				box-shadow: none;
+			}
+		}
+	}
+	.workboard {
+		.page-title {
+			font-family: font('Songer', 'ExtraBold');
+			font-size: rem(20px);
+			text-align: center;
+			margin-bottom: rem(23px);
+		}
+		.page-intro {
+			font-size: rem(20px);
+			text-align: center;
+			margin-bottom: rem(27px);
+			br {
+				@media (max-width: 576px) {
+					display: none;
+				}
+			}
+		}
+		&__header {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: rem(29px);
+			@media (max-width: 992px) {
+				flex-direction: column;
+			}
+		}
+		&-title {
+			font-family: font('Songer', 'ExtraBold');
+			font-size: rem(20px);
+		}
+		&-actions {
+			a.instruction {
+				color: $darkgray;
+
+			}
+			.btn {
+				margin-left: 1rem;
+				@media (max-width: 992px) {
+					display: block;
+					margin-left: 0;
+					margin-top: 1rem;
+				}
+				img {
+					filter: invert(1);
+				    position: relative;
+				    top: -2px;
+				}
+			}
+		}
+		.track {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: rem(18px);
+			font-size: rem(16px);
+			&__header {
+				display: flex;
+				flex-wrap: wrap;
+				@media (max-width: 992px) {
+					display: none;
+				}
+			}
+			&:last-child {
+				margin-bottom: rem(29px);
+			}
+			&__info {
+				display: flex;
+				flex-wrap: wrap;
+				background-color: $lightgray;
+				padding: rem(20px);
+				border-radius: 7px;
+				@media (max-width: 992px) {
+					flex-direction: column;
+					padding: rem(14px);
+				}
+			}
+			&_title {
+				font-family: font('Songer', 'ExtraBold');
+				font-size: rem(12px);
+				color: darken($gray,30%);
+				margin-bottom: .3rem;
+			}
+			&_brief {
+				flex: 0 0 30%;
+				max-width: 30%;
+			}
+			&_status {
+				flex: 0 0 20%;
+				max-width: 20%;
+
+			}	
+			&_actions {
+				flex: 0 0 50%;
+				max-width: 50%;
+				text-align: right;
+				.btn { 
+					font-size: rem(16px);
+					font-family: font('Philosopher', 'Regular');
+					&_about-track {
+						margin-right: .5rem;
+					}
+				}
+			}
+			&-name {
+				display: flex;
+			}	
+			&-cell {
+				@media (max-width: 992px) {
+					margin-bottom: .7rem;
+					flex: 0 0 100%!important;
+					max-width: 100%!important;
+				}
+			}
+			.btn-play {
+				margin-right: .5rem;
+				cursor: pointer;
+				border-radius: 99px;
+				border: 1px solid black;
+				height: 33px;
+				width: 33px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			.download-song {
+			    border: 1px solid $darkgray;
+			    border-radius: 7px;
+			    color: $darkgray;
+			    padding: 1px 8px;
+			    transition: .2s;
+			    font-size: rem(14px);
+			    &:hover,&:focus,&:active {
+
+			    	background-color: $darkgray;
+			    	color: white;
+			    }
+		    }
+		    .label-album {
+		    	color: darken($gray,30%);
+		    	font-size: rem(12px);
+		    }
+		    .song {
+		    	word-break: break-word;
+		    }
+		    .track-status {
+		    	
+		    	padding: .35rem;
+		    	border-radius: 7px;
+		    	text-align: center;
+		    	
+		    	&_uploaded {
+		    		background-color: #43C066;
+		    		color: white;
+		    	}
+		    	&_approved {
+		    		background-color: $gold;
+		    		color: black;
+		    	}
+		    	&_on-check {
+		    		background-color: #1387ff;
+		    		color: white;
+		    	}
+		    	&_decline {
+		    		background-color: #d20b0b;
+		    		color: white;
+
+		    	}
+		    	&_load {
+		    		background-color: #800080;
+		    		color: white;
+		    		img {
+						position: relative;
+						    margin-right: 6px;
+						    top: -1.5px;
+
+		    		}
+		    		
+		    	}
+		    }
+		    .track-status-actions {
+				//border: 1px solid white;
+			   border-radius: 7px;
+			    //color: black;
+			    padding: 2px 8px;
+			   text-align: center;
+			   font-family: font('Songer','Regular');
+			   margin-top: .3rem;
+			   width: 100%;
+			   display: block;
+			    transition: .2s;
+			    font-size: rem(11px);
+			    cursor: pointer;
+background: linear-gradient(180deg, rgba(197, 197, 197, 0.78) 12.5%, rgba(173, 173, 173, 0.17) 83.85%);
+		    }
+
+		}
+			.tracks_admin {
+				.track_actions {
+					flex: 0 0 25%;
+					max-width: 25%;
+				}
+				.track_fio {
+					flex: 0 0 25%;
+					max-width: 25%;
+					padding-left: 15px;
+				    padding-right: 15px;
+				}
+			}
+
+	}
+}
+.form-registration {
+	background-color: $lightgray;
+	border-radius: 7px;
+	padding: rem(20px);
+	margin-bottom: rem(29px);
+}
+.form-auth {
+	background-color: $lightgray;
+	border-radius: 7px;
+	padding: rem(20px);
+	margin-bottom: rem(29px);
+	a.forgotpassword {
+		margin-top: rem(20px);
+		display: block;
+		color: black;
+		text-align: center;
+		padding-bottom: 13px;
+		&:after {
+			content: "";
+			width: 89px;
+			height: 2px;
+			background-color: $gray;
+			display: block;
+			position: relative;
+			margin: 0 auto;
+			top: rem(13px);
+		}
+	}
+	.btn {
+		width: 100%;
+	}
+}
+.advantages-card {
+	background-color: $lightgray;
+	border-radius: 7px;
+	padding: rem(20px);
+	margin-bottom: rem(29px);
+}
+.form-title {
+	text-align: center;
+	font-family: font('Songer', 'ExtraBold');
+	margin-bottom: rem(18px);
+	font-size: rem(20px);
+}
+.form-field {
+	margin-bottom: rem(18px);
+	position: relative;
+	label {
+		margin-bottom: rem(5.85px);
+		font-size: rem(16px);
+	}
+	.icon-in-field {
+		display: block;
+		position: absolute;
+		bottom: calc((1.5em + .75rem + 2px) / 2 );
+		height: 15px;
+		left: 11.77px;
+		~.form-control {
+			padding-left: 32px;
+		}
+	}
+	&.link {
+		.icon-in-field {
+			width: 15px;
+	    	height: 15px;
+	    	&>img {
+	    		max-width: 100%;
+	    		height: auto;
+	    	}
+    	}
+
+	}
+}
+.form-control {
+	border: 2px solid $gray;
+	border-radius: 7px;
+	&:focus {
+		border-color: $gold;
+		box-shadow: 0 0 0 0.2rem transparentize($gold, 0.75);
+	}
+}
+.advantages-card {
+	&__title {
+		font-size: rem(20px);
+		font-family: font('Philosopher', 'Bold');
+		margin-bottom: rem(19px);
+
+	}
+	&__list {
+		margin-block-start: 0;
+	    margin-block-end: 0;
+	    margin-inline-start: 0;
+	    margin-inline-end: 0;
+	    padding-inline-start: 29px;
+	    list-style-type: none;
+		    li {
+				position: relative;
+				&:before {
+					background-image: url('/img/icons/music_note-24px.svg');
+				    content: "";
+				    width: 24px;
+				    height: 24px;
+				    position: absolute;
+				    left: -29px;
+				    display: block;
+				    background-size: contain;
+				    background-repeat: no-repeat;
+
+				}
+				margin-bottom: 1rem;
+				&:last-child {
+					margin-bottom: 0;
+				}
+	    	}
+	}
+
+}
+.toast {
+	position: fixed;
+	bottom: 15px;
+	right: 15px;
+	z-index: 1060;
+}
+.form_adding-track {
+	padding: rem(20px);
+	background-color: $lightgray;
+	margin-bottom: rem(29px);
+	border-radius: 7px;
+}
+.table {
+	&_TrackInfo {
+		tr {
+			&.cover-img {
+				img {
+					max-width: 50px;
+					width: 100%;
+					border-radius: 7px;
+				}
+			}
+			&:first-child {
+				td { 
+					border-top: 0;
+				}
+			}
+			td {
+				font-size: rem(14px);
+				&:first-child {
+					font-weight: bold;
+				}
+
+			}
+		}
+	}
+}
+.btn_gold {
+		background-color: $gold;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		border-radius: 7px;
+		font-family: font('Songer', 'Regular');
+		padding-left: rem(29px);
+		padding-right: rem(29px);
+		&:hover {
+			background-color: transparentize($gold, 0.25);
+		}
+		&:focus, &:active {
+			background-color: darken($gold, 4%);
+			box-shadow: none;
+		}
+}
+.btn_delete {
+		background-color: #dc3545!important;
+		color: white!important;
+		&:hover {
+			background-color: transparentize(#dc3545, 0.25)!important;
+		}
+		&:focus, &:active {
+			background-color: darken(#dc3545, 4%)!important;
+			box-shadow: none;
+		}
+}
+#StatisticTrackModal {
+	table {
+		td {
+			font-size: 18px;
+		}
+	}
+}
