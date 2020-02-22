@@ -1,0 +1,340 @@
+include ../../layouts/main
+block content
+	.page_cabinet
+		.wrap-header
+			.container-fluid
+				.header
+						.logo
+							img(src="/img/logo-lm.png")
+						.toggler.d-lg-none
+							.toggler__btn 
+						.menu.mobile_hide
+							ul
+								li
+									a(href="#") Треки
+								li
+									a(href="#") Пользователи
+								li.system-item
+									a(href="#") ADMIN
+								li.system-item
+									a(href="#") Выход
+
+		.workboard
+			.container
+				.workboard__header.mb-2
+					.workboard-title Треки
+				.workboard__select-cat.mb-3
+					a.btn.btn_black.btn_black_unfilled(href="index.html") Новые
+					a.btn.btn_black.btn_black(href="uploaded.html") Загруженные на площадки
+					a.btn.btn_black.btn_black_unfilled(href="waiting-signing.html") Ждёт подписания
+					a.btn.btn_black.btn_black_unfilled(href="refused.html") Отклоненные
+
+
+
+				.tracks.tracks_admin
+
+					.track(
+						data-links_yandexMusic="https://music.yandex.ru/album/7065596",
+						data-links_appleMusic="https://music.apple.com/ru/album/artefact-single/1455290124",
+						data-links_iTunes="https://music.apple.com/ru/album/artefact-single/1455290124",
+						data-links_spotify="https://open.spotify.com/artist/5y7Ur6PtmtDegVpTOCD5xN",
+						data-links_googlePlay="https://play.google.com/store/music/album/%D0%AD%D0%BB%D1%8D%D0%BC_ARTIFACT?id=B7ravbovkdn67aipzaahgarbpoa",
+						data-name_track="Хуйня",
+						data-author_text="Долбаеб Ебаный",
+						data-author_music="Алиев Эдвард",
+						data-cover_img="/img/covers/9.jpg"
+						)
+						.track__header
+							.track-cell.track_title.track_brief Трек
+							.track-cell.track_title.track_status Статус
+							.track-cell.track_title.track_fio ФИО
+							.track-cell.track_title.track_actions Действия
+						.track__info
+							.track-cell.track_brief 
+								.track-name
+									.track-name__play
+										.btn-play
+											img(src="/img/icons/play_arrow-24px.svg")
+									.track-name__track
+										.song
+											b Lost Boy 
+											| - Jaden Smith
+										.label-album SYRE
+										a.download-song(href="#")
+											span
+											| Скачать
+							.track-cell.track_status
+								.track-status.track-status_uploaded
+									div Заружен на площадки
+								a.track-status-actions.track-status-actions_links(data-toggle="modal" data-target="#linksModal")
+									span
+									| Ссылки
+							.track-cell.track_fio Алиев Эдвард Эдуардович
+							.track-cell.track_actions
+								a.btn.btn_open-track.mr-2(data-toggle="modal" data-target="#TrackInfoModal")
+									span
+									| Открыть
+								a.btn.btn_delete(data-toggle="modal" data-target="#StatisticTrackModal")
+									span
+									| Удалить
+			#TrackInfoModal.modal.fade.TrackInfoModal_admin(tabindex='-1', role='dialog', aria-labelledby='TrackInfoModalLabel', aria-hidden='true')
+				.modal-dialog.modal-xl(role='document')
+					.modal-content
+						.modal-header
+							h5#linksModalLabel.modal-title Информация о треке
+							button.close(type='button', data-dismiss='modal', aria-label='Close')
+								span(aria-hidden='true') &times;
+						.modal-body  
+							form.form_info-track-admin
+								.composition
+									.workboard-title.mb-2 Трек и информация о нём
+									.row
+										.col-md-6
+											.form-field
+												label Композиция
+												.track-name.rounded
+													.track-name__play
+														.btn-play
+															img(src="/img/icons/play_arrow-24px.svg")
+													.track-name__track
+														.song
+															b Lost Boy 
+															| - Jaden Smith
+														.label-album SYRE
+														a.download-song(href="#")
+															span
+															| Скачать
+										.col-md-6
+											.form-field
+												label Обложка
+												br
+												a.btn.btn_unfilled Открыть
+										.col-md-6
+											.form-field
+												label Автор слов (ФИО)
+												input(type="text", class="form-control", placeholder="Введите ФИО автора слов", name="authorMusic" aria-describedby="HelpAuthorMusic")
+												small(id="HelpAuthorMusic" class="text-muted") 
+										.col-md-6
+											.form-field
+												label Автор музыки (ФИО)
+												input(type="text", class="form-control", placeholder="Введите ФИО автора музыки", name="authorText" aria-describedby="HelpAuthorText")
+												small(id="HelpAuthorText" class="text-muted") 
+										.col-md-6
+											.form-field
+												label Название альбома
+												input(type="text", class="form-control", placeholder="Введите название альбома", name="albumName" aria-describedby="HelpAlbumName")
+												small(id="HelpAlbumName" class="text-muted")
+												
+
+								.workboard-title.mb-2 Персональные данные
+								.row
+									.col-lg-6
+										.row
+											.col-12
+												.form-field
+													label ФИО
+													input(type="text", class="form-control", placeholder="Введите свои ФИО", name="fio")
+											.col-12
+												.form-field
+													label Дата рождения
+													input(type="text", class="form-control", placeholder="Введите дату своего рождения", name="birthday")
+											.col-12
+												.form-field
+													label Номер телефона
+													input(type="text", class="form-control", placeholder="Введите свой номер", name="phone")
+											.col-12
+												.form-field
+													label Псевдоним 
+													input(type="text", class="form-control", placeholder="Введите псевдоним", name="nickname")
+									.col-lg-6
+										.row
+											.col-12
+												.form-field
+													label Адрес регистрации 
+													input(type="text", class="form-control", placeholder="Введите адрес регистрации", name="addressRegistration")
+											.col-12
+												.form-field
+													label Адрес фактического проживания
+													input(type="text", class="form-control", placeholder="Если отличается от адреса регистрации", name="addressResidential")
+											.col-md-4
+												.form-field
+													label Гражданство 
+													input(type="text", class="form-control", placeholder="РФ", name="citizenship")
+											.col-md-4
+												.form-field
+													label Серия паспорта 
+													input(type="text", class="form-control", placeholder="6313", name="passport_series")
+											.col-md-4
+												.form-field
+													label Номер паспорта 
+													input(type="text", class="form-control", placeholder="934021", name="passport_number")
+											.col-md-7
+												.form-field
+													label Кем выдан паспорт 
+													input(type="text", class="form-control", placeholder="Кем выдан паспорт", name="whoIssue")
+											.col-md-5
+												.form-field
+													label Дата выдачи 
+													input(type="text", class="form-control", placeholder="03.10.2013", name="dataIssue")
+								.workboard-title Фото или сканы паспорта
+								.workboard-introduction.mb-3
+								.row
+									.col-md-6
+										.form-field
+											label Основная страница
+											br
+											a.btn.btn_black(href="#" target="_blank") Открыть
+
+												
+									.col-md-6
+										.form-field
+											label Страница с регистрацией
+											br
+											a.btn.btn_black(href="#" target="_blank") Открыть	
+								.requisites
+									.workboard-title.mb-2 Реквизиты
+									.custom-control.custom-radio.custom-control-inline
+										input#customRadioInline1.custom-control-input(type='radio', name='RadioTypeRequisites', value='fizlico' checked='checked')
+										label.custom-control-label(for='customRadioInline1') Физ. лицо
+									.custom-control.custom-radio.custom-control-inline.mb-2
+										input#customRadioInline2.custom-control-input(type='radio', name='RadioTypeRequisites', value='ip')
+										label.custom-control-label(for='customRadioInline2') ИП
+									.row
+										.col-md-6
+											.form-field
+												label Номер карты
+												input(type="text", class="form-control", placeholder="Номер вашей карты", name="numberCard" aria-describedby="HelpNumberCard")
+										.col-md-6.d-none
+											.form-field
+												label Наименование ИП
+												input(type="text", class="form-control", placeholder="Номер вашей карты", name="nameIp" aria-describedby="HelpNumberCard")
+
+										.col-md-6
+											.form-field
+												label Номер лицевого счёта
+												input(type="text", class="form-control", placeholder="Номер лицевого счёта", name="paymentAccount" aria-describedby="HelpPaymentAccount")
+										.col-md-6
+											.form-field
+												label Наименование банка
+												input(type="text", class="form-control", placeholder='Например, ПАО "Сбербанк"', name="nameBank" aria-describedby="HelpNameBank")
+										.col-md-6
+											.form-field
+												label БИК
+												input(type="text", class="form-control", placeholder="БИК вашего банка", name="bik" aria-describedby="HelpBik")
+
+										.col-md-6
+											.form-field
+												label ИНН
+												input(type="text", class="form-control", placeholder="Введите ИНН", name="inn" aria-describedby="HelpInn")
+										.col-md-6
+											.form-field
+												label Кор. счёт
+												input(type="text", class="form-control", placeholder="Кор. счёт", name="korAccount" aria-describedby="HelpKorAccount")
+										.col-md-6
+											.form-field
+												label СНИЛС
+												input(type="text", class="form-control", placeholder="Введите номер СНИЛСа", name="snils" aria-describedby="HelpSnils")
+
+								button.btn.btn_gold(type="submit") Сохранить
+
+		section.footer
+			.container-fluid
+				.logo
+					img(src="/img/logo-lm.png")
+					.logo__label LM Distribution
+				.footer__middle 
+					.social
+						.social-instagram
+							a(href="https://instagram.com/legacy_music_to", target="_blank")
+								img(src="/img/icons/instagram.svg")
+						.social-vk
+							a(href="https://vk.com/legacy.music", target="_blank")
+								img(src="/img/icons/vk.svg")
+					.agreement
+						a(href="#") Пользовательское соглашение
+				.footer__last
+					.menu
+						ul
+							li
+								a(href="mailto:legacy_music@bk.ru") legacy_music@bk.ru
+							li
+								a(href="#") Главная
+
+#linksModal.modal.fade.linksModal_admin(tabindex='-1', role='dialog', aria-labelledby='linksModalLabel', aria-hidden='true')
+	.modal-dialog.modal-lg(role='document')
+		.modal-content
+			.modal-header
+				h5#linksModalLabel.modal-title Ссылки на площадки
+				button.close(type='button', data-dismiss='modal', aria-label='Close')
+					span(aria-hidden='true') &times;
+			.modal-body  
+				.form-field.d-flex.link.link_yandexMusic
+					span.icon-in-field
+						img(src="/img/icons/yandexMusic.svg")
+					input#link_yandexMusic.form-control
+					a.btn.btn_clipboard(data-clipboard-target="#link_yandexMusic") Копировать
+					.btn.btn_gold.btn_save-link Сохранить
+				.form-field.d-flex.link.link_spotify
+					span.icon-in-field
+						img(src="/img/icons/spotify.svg")
+					input#link_spotify.form-control
+					a.btn.btn_clipboard(data-clipboard-target="#link_spotify") Копировать
+					.btn.btn_gold.btn_save-link Сохранить
+				.form-field.d-flex.link.link_appleMusic
+					span.icon-in-field
+						img(src="/img/icons/appleMusic.svg")
+					input#link_appleMusic.form-control
+					a.btn.btn_clipboard(data-clipboard-target="#link_appleMusic") Копировать
+					.btn.btn_gold.btn_save-link Сохранить
+				.form-field.d-flex.link.link_iTunes
+					span.icon-in-field
+						img(src="/img/icons/iTunes.svg")
+					input#link_iTunes.form-control
+					a.btn.btn_clipboard(data-clipboard-target="#link_iTunes") Копировать
+					.btn.btn_gold.btn_save-link Сохранить
+				.form-field.d-flex.link.link_googlePlay
+					span.icon-in-field
+						img(src="/img/icons/googlePlay.svg")
+					input#link_googlePlay.form-control
+					a.btn.btn_clipboard(data-clipboard-target="#link_googlePlay") Копировать
+					.btn.btn_gold.btn_save-link Сохранить
+
+#StatisticTrackModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='StatisticInfoModalLabel', aria-hidden='true')
+	.modal-dialog(role='document')
+		.modal-content
+			.modal-header
+				h5#linksModalLabel.modal-title Статистика
+				button.close(type='button', data-dismiss='modal', aria-label='Close')
+					span(aria-hidden='true') &times;
+			.modal-body  
+				table.table.table_TrackInfoStatisticTrackModal
+					tr
+						th Период
+						th Отчёт	
+					tr
+						td 11.11.2019 - 11.02.2020
+						td 
+							a.btn.btn_gold Скачать
+#SigningContractModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='SigningContractModalLabel', aria-hidden='true')
+	.modal-dialog(role='document')
+		.modal-content
+			.modal-header
+				h5#linksModalLabel.modal-title Подпишите договор!
+				button.close(type='button', data-dismiss='modal', aria-label='Close')
+					span(aria-hidden='true') &times;
+			.modal-body  
+				.workboard-title Поздравляем! Ваш трек принят, осталось подписать договор!
+				p
+					ul
+						li 1. #[a(href="#") Скачайте] сформированный для Вас договор
+						li 2. Распечатайте договор и подпишите его
+						li 3. Отсканируйте подписанный договор и отправьте на email #[a(href="maito:legacy_music@bk.ru") legacy_music@bk.ru]. После проверки договора - трек будет выгружен на площадки.
+
+.toast(role='alert', aria-live='assertive', aria-atomic='true')
+	.toast-header
+		strong.mr-auto Legacy Music
+		small.text-muted 
+		button.ml-2.mb-1.close(type='button', data-dismiss='toast', aria-label='Close')
+			span(aria-hidden='true') ×
+	.toast-body
+		| Ссылка скопирована!

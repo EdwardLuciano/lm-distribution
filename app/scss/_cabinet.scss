@@ -95,9 +95,30 @@
 				background-color: darken($darkgray, 4%);
 				box-shadow: none;
 			}
+			&_unfilled {
+				background-color: white;
+				border: 1px solid $darkgray;
+				color: $darkgray;
+				&:hover {
+					background-color: $darkgray;
+					color: white;
+				}
+				&:focus, &:active {
+					background-color: $darkgray;
+					box-shadow: none;
+					color: white;
+				}
+			}
 		}
 	}
 	.workboard {
+		&__select-cat {
+			.btn {
+				margin-right: .5rem;
+				margin-bottom: .5rem;
+				font-size: rem(14px);
+			}
+		}
 		.page-title {
 			font-family: font('Songer', 'ExtraBold');
 			font-size: rem(20px);
@@ -429,7 +450,7 @@ background: linear-gradient(180deg, rgba(197, 197, 197, 0.78) 12.5%, rgba(173, 1
 	right: 15px;
 	z-index: 1060;
 }
-.form_adding-track {
+.form_adding-track, .form_info-track-admin {
 	padding: rem(20px);
 	background-color: $lightgray;
 	margin-bottom: rem(29px);
